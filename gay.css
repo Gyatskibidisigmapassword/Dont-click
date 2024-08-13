@@ -1,0 +1,101 @@
+body{
+  margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+  background: black;
+}
+.container{
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  flex-direction: column;
+  gap: 150px;
+  display: flex;
+  font-size: 2rem;
+}
+.box{
+  border: 2px solid var(--color);
+  box-shadow: 0 0 30px var(--color);
+  width: 500px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  transition: 0.5s;
+}
+.box::before{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: var(--color);
+  content: '';
+  top: -25px;
+  rotate: 45deg;
+  transition: 0.5s;
+  left: -25px;
+  box-shadow: 0 0 20px var(--color);
+}
+.box::after{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--color);
+  content: '';
+  bottom: -25px;
+  right: -25px;
+  rotate: 45deg;
+  background: black;
+  box-shadow: 0 0 20px var(--color);
+  transition: 0.5s
+}
+.box:hover::before{
+  rotate: 0deg;
+  left: calc(100% - 25px);
+}
+.box:hover::after{
+  rotate: 0deg;
+  right: calc(100% - 25px);
+}
+.box:hover{
+  letter-spacing: 20px;
+  color: var(--color);
+  background: url(webp.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 500px var(--color);
+}
+.box2{
+  animation: 1s run ease-in-out;
+}
+.box1{
+  animation: 2s run2 ease-in-out;
+}
+.box3{
+  animation: 3s run3 ease-in-out;
+}
+@keyframes run{
+  from {
+    transform: translateX(-1000px)
+  }
+  to{
+    transform: translateX(0px)
+  }
+}
+@keyframes run2{
+  from {
+    transform: translateX(-1600px)
+  }
+  to{
+    transform: translateX(0px)
+  }
+}
+@keyframes run3{
+  from {
+    transform: translateX(-1900px)
+  }
+  to{
+    transform: translateX(0px)
+  }
+}
